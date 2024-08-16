@@ -4,12 +4,12 @@
 // Database structure
 struct AUTH
 {
-    // char username[50];
-    // char position[50];
-    // char password[50];
-    // char class[50];
+    char username[50];
+    char position[50];
+    char password[50];
+    char class[50];
     int id; // primary key
-};
+}auth;
 
 struct STUDENT
 {
@@ -19,36 +19,22 @@ struct STUDENT
     int roll_no;
     int id; // primary key
 };
-void ReMemoryAllocationAuth()
-{
-    struct AUTH *auth = (struct AUTH *)malloc(2 * sizeof(struct AUTH));
-    size_t n = 5 * sizeof(struct AUTH);
 
-    struct AUTH *newauth = (struct AUTH *)realloc(auth, n);
-    // auth[100].id=20;(
-    printf("%d\n", sizeof(*newauth));
-}
-
-void ReMemoryAllocationStudent(size_t n)
+void Authentication()
 {
-    struct STUDENT *student = (struct STUDENT *)realloc(student, n * sizeof(struct STUDENT));
+    printf("Enter Username= ");
+    gets(auth.username);
+    printf("Enter Password= ");
+    gets(auth.password);
+    printf("Enter the Position= ");
+    gets(auth.position);
+    
+    auth.id=1;
+
+    
 }
 
 int main(int argc, char const *argv[])
 {
-    // int n = 0;
-    // struct AUTH *auth = (struct AUTH *)malloc(2 * sizeof(struct AUTH));
-    // struct STUDENT *student = (struct STUDENT *)malloc(n * sizeof(struct STUDENT));
-    // ReMemoryAllocationAuth();
-    // printf("%d",sizeof(auth));
-
-    int *var = (int *)malloc(2 * sizeof(var));
-    printf("%d\n", sizeof(var));
-
-    size_t n = 5 * sizeof(var);
-
-    var = (int *)realloc(var, n);
-    var[90]=90;
-    printf("%d\n", n);
-    return 0;
+    
 }
